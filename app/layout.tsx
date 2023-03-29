@@ -1,4 +1,5 @@
 import './globals.css'
+import { ThemeContextProvider } from './context/theme'
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,23 +11,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  
   return (
-    <html lang="en" 
-      
-      >
-      <body
-        className='
-          h-screen
-          flex 
-          flex-col
-          //border-2
-          border-purple-50
-        bg-gray-900
-          gap-2 
-          p-6   
-        text-gray-300        
-        '
-      >{children}</body>
-    </html>
+    <ThemeContextProvider>
+      <html lang="en">
+        <body
+          className='
+            h-screen
+            flex 
+            flex-col
+            //border-2
+            border-purple-50
+          //bg-gray-900
+            gap-2 
+            p-6   
+          //text-gray-300        
+          '
+        >{children}</body>
+      </html>
+    </ThemeContextProvider>
   )
 }
